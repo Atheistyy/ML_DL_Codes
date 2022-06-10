@@ -1,3 +1,3 @@
-主要基于sklearn的机器学习入门级别代码示例
+基于sklearn的机器学习入门级别代码示例
 
-来源于Bilibili
+来源于Bilibili_黑马程序员
