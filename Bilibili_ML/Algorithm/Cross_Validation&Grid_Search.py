@@ -36,17 +36,13 @@ def knn_iris_gscv():
     transfer = StandardScaler()
     x_train = transfer.fit_transform(x_train)
     x_test = transfer.transform(x_test)
-
     # 4. KNN预估器
     estimator = KNeighborsClassifier()
-
-
     # 加入网格搜索和交叉验证
     param_dict = {'n_neighbors': [1,3,5,7,9,11]}  # 超参数 k 的取值
     estimator = GridSearchCV(estimator, param_grid=param_dict, cv = 10)
     # cv 表示每取一个 k 值，进行几折的交叉验证，一般取10
     estimator.fit(x_train, y_train)
-
     # 5. 模型评估
     # 方法1: 直接对比真实值和预测值
     y_predict = estimator.predict(x_test)
